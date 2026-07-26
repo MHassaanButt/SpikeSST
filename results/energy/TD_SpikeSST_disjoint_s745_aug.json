@@ -1,0 +1,338 @@
+{
+  "tag": "TD_SpikeSST_disjoint_s745_aug",
+  "model": "SpikeSST",
+  "dataset": "TD",
+  "attn_variant": "sdsa",
+  "arch_variant": "base",
+  "split": "disjoint",
+  "seed": 745,
+  "window_size": 13,
+  "n_components": 20,
+  "timesteps": 4,
+  "split_hash": "c1e3907378cb6f0f",
+  "protocol_hash": "6afd98f0585e034a",
+  "source_result": "results/spikesst/TD_SpikeSST_disjoint_s745_aug.json",
+  "checkpoint": "results/spikesst/ckpt/TD_SpikeSST_disjoint_s745_aug.pt",
+  "ANN_GFLOPs": 0.015449344,
+  "adapter_notes": [],
+  "energy_accounting_version": 2,
+  "E_primary_uJ": 13.958531964211042,
+  "E_optimistic_lower_uJ": 10.326493564211038,
+  "binary_ac_uJ": 9.443024764211039,
+  "multibit_mac_uJ": 0.0376832,
+  "static_input_mac_uJ": 4.477823999999999,
+  "classifier_uJ": 0.1925483760674996,
+  "classifier_input_kinds": {
+    "head": "binary"
+  },
+  "E_SNN_uJ": 13.958531964211042,
+  "E_ANN_uJ": 71.0669824,
+  "energy_ratio": 0.1964137422586138,
+  "SOPs_M": 10.492249738012266,
+  "MAC_ops_M": 0.981632,
+  "mean_firing_rate": 0.22740705817000106,
+  "firing_rate_source": "spiking_neuron_modules",
+  "spike_rates": {
+    "conv_stem.lif1": 0.19682065011162697,
+    "conv_stem.lif2": 0.2012300204999488,
+    "blocks.0.attn.qkv.spike_in.lif": 0.17783785910056582,
+    "blocks.0.attn.qkv.q_lif": 0.2176765898820655,
+    "blocks.0.attn.qkv.k_lif": 0.20011639913608287,
+    "blocks.0.attn.qkv.v_lif": 0.1982277919634663,
+    "blocks.0.attn.kv_lif": 0.16438341981506555,
+    "blocks.0.sta.spike_in.lif": 0.24372144041518712,
+    "blocks.0.sce.spike_in.lif": 0.24004740347636158,
+    "blocks.0.sce.lif_h": 0.26323213540659895,
+    "blocks.0.sce.lif_g": 0.29052675765906943,
+    "blocks.0.ffn.spike_in.lif": 0.19794417389122576,
+    "blocks.0.ffn.lif1": 0.18232218740058356,
+    "blocks.1.attn.qkv.spike_in.lif": 0.1889347020472432,
+    "blocks.1.attn.qkv.q_lif": 0.28127739721074185,
+    "blocks.1.attn.qkv.k_lif": 0.2317765634121566,
+    "blocks.1.attn.qkv.v_lif": 0.23394076847310724,
+    "blocks.1.attn.kv_lif": 0.19349983770657203,
+    "blocks.1.sta.spike_in.lif": 0.2732486268569683,
+    "blocks.1.sce.spike_in.lif": 0.27882589856483814,
+    "blocks.1.sce.lif_h": 0.27610960628451975,
+    "blocks.1.sce.lif_g": 0.2566094321808938,
+    "blocks.1.ffn.spike_in.lif": 0.23682997050084945,
+    "blocks.1.ffn.lif1": 0.18531182626711912,
+    "spike_out.lif": 0.27472499598716865
+  },
+  "binary_input_rates": {
+    "conv_stem.conv2": 0.19682065011162697,
+    "blocks.0.attn.qkv.q_proj": 0.17783785910056582,
+    "blocks.0.attn.qkv.k_proj": 0.17783785910056582,
+    "blocks.0.attn.qkv.v_proj": 0.17783785910056582,
+    "blocks.0.attn.out_proj": 0.04201955648283635,
+    "blocks.0.sta.temporal_mix": 0.24372144041518712,
+    "blocks.0.sce.fc2": 0.26323213540659895,
+    "blocks.0.ffn.fc1": 0.19794417389122576,
+    "blocks.0.ffn.fc2": 0.18232218740058356,
+    "blocks.1.attn.qkv.q_proj": 0.1889347020472432,
+    "blocks.1.attn.qkv.k_proj": 0.1889347020472432,
+    "blocks.1.attn.qkv.v_proj": 0.1889347020472432,
+    "blocks.1.attn.out_proj": 0.03440897559249324,
+    "blocks.1.sta.temporal_mix": 0.2732486268569683,
+    "blocks.1.sce.fc2": 0.27610960628451975,
+    "blocks.1.ffn.fc1": 0.23682997050084945,
+    "blocks.1.ffn.fc2": 0.18531182626711912,
+    "head": 0.27472499598716865
+  },
+  "n_profile_samples": 296904,
+  "lif_rates": {
+    "conv_stem.lif1": 0.19682065011162697,
+    "conv_stem.lif2": 0.2012300204999488,
+    "blocks.0.attn.qkv.spike_in.lif": 0.17783785910056582,
+    "blocks.0.attn.qkv.q_lif": 0.2176765898820655,
+    "blocks.0.attn.qkv.k_lif": 0.20011639913608287,
+    "blocks.0.attn.qkv.v_lif": 0.1982277919634663,
+    "blocks.0.attn.kv_lif": 0.16438341981506555,
+    "blocks.0.sta.spike_in.lif": 0.24372144041518712,
+    "blocks.0.sce.spike_in.lif": 0.24004740347636158,
+    "blocks.0.sce.lif_h": 0.26323213540659895,
+    "blocks.0.sce.lif_g": 0.29052675765906943,
+    "blocks.0.ffn.spike_in.lif": 0.19794417389122576,
+    "blocks.0.ffn.lif1": 0.18232218740058356,
+    "blocks.1.attn.qkv.spike_in.lif": 0.1889347020472432,
+    "blocks.1.attn.qkv.q_lif": 0.28127739721074185,
+    "blocks.1.attn.qkv.k_lif": 0.2317765634121566,
+    "blocks.1.attn.qkv.v_lif": 0.23394076847310724,
+    "blocks.1.attn.kv_lif": 0.19349983770657203,
+    "blocks.1.sta.spike_in.lif": 0.2732486268569683,
+    "blocks.1.sce.spike_in.lif": 0.27882589856483814,
+    "blocks.1.sce.lif_h": 0.27610960628451975,
+    "blocks.1.sce.lif_g": 0.2566094321808938,
+    "blocks.1.ffn.spike_in.lif": 0.23682997050084945,
+    "blocks.1.ffn.lif1": 0.18531182626711912,
+    "spike_out.lif": 0.27472499598716865
+  },
+  "per_layer": {
+    "conv_stem.conv1": {
+      "macs_per_sample": 3893760.0,
+      "binary": false,
+      "input_kind": "static_analog",
+      "rate": 0.01577526661549984,
+      "component": "stem",
+      "t_replicated": true,
+      "energy_J": 4.4778239999999995e-06
+    },
+    "conv_stem.conv2": {
+      "macs_per_sample": 12460032.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.19682065011162697,
+      "component": "stem",
+      "t_replicated": true,
+      "energy_J": 2.207152438786508e-06
+    },
+    "blocks.0.attn.qkv.q_proj": {
+      "macs_per_sample": 2768896.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.17783785910056582,
+      "component": "attention",
+      "t_replicated": false,
+      "energy_J": 4.431730830409083e-07
+    },
+    "blocks.0.attn.qkv.k_proj": {
+      "macs_per_sample": 2768896.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.17783785910056582,
+      "component": "attention",
+      "t_replicated": false,
+      "energy_J": 4.431730830409083e-07
+    },
+    "blocks.0.attn.qkv.v_proj": {
+      "macs_per_sample": 2768896.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.17783785910056582,
+      "component": "attention",
+      "t_replicated": false,
+      "energy_J": 4.431730830409083e-07
+    },
+    "blocks.0.attn.out_proj": {
+      "macs_per_sample": 2768896.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.04201955648283635,
+      "component": "attention",
+      "t_replicated": false,
+      "energy_J": 1.0471300368038967e-07
+    },
+    "blocks.0.sta.temporal_mix": {
+      "macs_per_sample": 173056.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.24372144041518712,
+      "component": "sta",
+      "t_replicated": false,
+      "energy_J": 3.7959711833241564e-08
+    },
+    "blocks.0.sce.fc1": {
+      "macs_per_sample": 4096.0,
+      "binary": false,
+      "input_kind": "multibit",
+      "rate": 0.2400474015237956,
+      "component": "sce",
+      "t_replicated": false,
+      "energy_J": 1.88416e-08
+    },
+    "blocks.0.sce.fc2": {
+      "macs_per_sample": 4096.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.26323213540659895,
+      "component": "sce",
+      "t_replicated": false,
+      "energy_J": 9.703789439628864e-10
+    },
+    "blocks.0.ffn.fc1": {
+      "macs_per_sample": 5537792.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.19794417389122576,
+      "component": "ffn",
+      "t_replicated": false,
+      "energy_J": 9.865562963592951e-07
+    },
+    "blocks.0.ffn.fc2": {
+      "macs_per_sample": 5537792.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.18232218740058356,
+      "component": "ffn",
+      "t_replicated": false,
+      "energy_J": 9.086961157285073e-07
+    },
+    "blocks.1.attn.qkv.q_proj": {
+      "macs_per_sample": 2768896.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.1889347020472432,
+      "component": "attention",
+      "t_replicated": false,
+      "energy_J": 4.7082648668382314e-07
+    },
+    "blocks.1.attn.qkv.k_proj": {
+      "macs_per_sample": 2768896.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.1889347020472432,
+      "component": "attention",
+      "t_replicated": false,
+      "energy_J": 4.7082648668382314e-07
+    },
+    "blocks.1.attn.qkv.v_proj": {
+      "macs_per_sample": 2768896.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.1889347020472432,
+      "component": "attention",
+      "t_replicated": false,
+      "energy_J": 4.7082648668382314e-07
+    },
+    "blocks.1.attn.out_proj": {
+      "macs_per_sample": 2768896.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.03440897559249324,
+      "component": "attention",
+      "t_replicated": false,
+      "energy_J": 8.574738739393695e-08
+    },
+    "blocks.1.sta.temporal_mix": {
+      "macs_per_sample": 173056.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.2732486268569683,
+      "component": "sta",
+      "t_replicated": false,
+      "energy_J": 4.255858293242356e-08
+    },
+    "blocks.1.sce.fc1": {
+      "macs_per_sample": 4096.0,
+      "binary": false,
+      "input_kind": "multibit",
+      "rate": 0.27882589499369775,
+      "component": "sce",
+      "t_replicated": false,
+      "energy_J": 1.88416e-08
+    },
+    "blocks.1.sce.fc2": {
+      "macs_per_sample": 4096.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.27610960628451975,
+      "component": "sce",
+      "t_replicated": false,
+      "energy_J": 1.0178504526072535e-09
+    },
+    "blocks.1.ffn.fc1": {
+      "macs_per_sample": 5537792.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.23682997050084945,
+      "component": "ffn",
+      "t_replicated": false,
+      "energy_J": 1.180363604399856e-06
+    },
+    "blocks.1.ffn.fc2": {
+      "macs_per_sample": 5537792.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.18531182626711912,
+      "component": "ffn",
+      "t_replicated": false,
+      "energy_J": 9.235965141066979e-07
+    },
+    "head": {
+      "macs_per_sample": 778752.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.27472499598716865,
+      "component": "classifier",
+      "t_replicated": false,
+      "energy_J": 1.925483760674996e-07
+    }
+  },
+  "components": {
+    "stem": {
+      "SOPs_M": 2.4523915986516753,
+      "MACs_M": 0.97344,
+      "energy_uJ": 6.684976438786508
+    },
+    "attention": {
+      "SOPs_M": 3.2582878891650235,
+      "MACs_M": 0.0,
+      "energy_uJ": 2.9324591002485207
+    },
+    "sta": {
+      "SOPs_M": 0.08946477196185014,
+      "MACs_M": 0.0,
+      "energy_uJ": 0.08051829476566512
+    },
+    "sce": {
+      "SOPs_M": 0.0022091437739668223,
+      "MACs_M": 0.008192,
+      "energy_uJ": 0.03967142939657014
+    },
+    "ffn": {
+      "SOPs_M": 4.4435694784381745,
+      "MACs_M": 0.0,
+      "energy_uJ": 3.9992125305943564
+    },
+    "classifier": {
+      "SOPs_M": 0.21394264007499958,
+      "MACs_M": 0.0,
+      "energy_uJ": 0.1925483760674996
+    },
+    "other": {
+      "SOPs_M": 0.03238421594657651,
+      "MACs_M": 0.0,
+      "energy_uJ": 0.029145794351918858
+    }
+  }
+}

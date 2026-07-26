@@ -1,0 +1,168 @@
+{
+  "tag": "TD_brain_inspired_snn_disjoint_s545_aug",
+  "model": "brain_inspired_snn",
+  "dataset": "TD",
+  "split": "disjoint",
+  "seed": 545,
+  "window_size": 13,
+  "n_components": 20,
+  "timesteps": 30,
+  "split_hash": "4a3265a4be5cdb78",
+  "protocol_hash": "4ff52b826cd4ae22",
+  "source_result": "results/baselines/TD_brain_inspired_snn_disjoint_s545_aug.json",
+  "checkpoint": "results/baselines/ckpt/TD_brain_inspired_snn_disjoint_s545_aug.pt",
+  "ANN_GFLOPs": 1.57257696,
+  "adapter_notes": [],
+  "energy_accounting_version": 2,
+  "E_primary_uJ": 579.4374772179094,
+  "E_optimistic_lower_uJ": 270.71184521790934,
+  "binary_ac_uJ": 195.6164212179093,
+  "multibit_mac_uJ": 383.821056,
+  "static_input_mac_uJ": 0.0,
+  "classifier_uJ": 5.723135999999999,
+  "classifier_input_kinds": {
+    "fc1": "multibit"
+  },
+  "E_SNN_uJ": 579.4374772179094,
+  "E_ANN_uJ": 7233.854015999999,
+  "energy_ratio": 0.08010079771257433,
+  "SOPs_M": 217.3515791310104,
+  "MAC_ops_M": 83.43936,
+  "mean_firing_rate": 0.19132086401852805,
+  "firing_rate_source": "binary_layer_inputs",
+  "spike_rates": {},
+  "n_profile_samples": 302479,
+  "lif_rates": {},
+  "per_layer": {
+    "conv1": {
+      "macs_per_sample": 1946880.0,
+      "binary": false,
+      "input_kind": "multibit",
+      "rate": 0.00300247818502492,
+      "component": "stem",
+      "t_replicated": false,
+      "energy_J": 8.955647999999999e-06
+    },
+    "conv2": {
+      "macs_per_sample": 93450240.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.33128953684884077,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 2.7863178055211713e-05
+    },
+    "conv3": {
+      "macs_per_sample": 186900480.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.193425448975083,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 3.2536178331892664e-05
+    },
+    "conv4": {
+      "macs_per_sample": 1460160.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.3385922064350207,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 4.4495891653334384e-07
+    },
+    "conv5": {
+      "macs_per_sample": 5191680.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.1221610506742014,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 5.707989752078141e-07
+    },
+    "conv6": {
+      "macs_per_sample": 560701440.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.14556130064205933,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 7.345478779044803e-05
+    },
+    "conv7": {
+      "macs_per_sample": 79626240.0,
+      "binary": false,
+      "input_kind": "multibit",
+      "rate": 0.1847329317374093,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 0.000366280704
+    },
+    "conv8": {
+      "macs_per_sample": 159252480.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.2226930012134336,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 3.1917971449694083e-05
+    },
+    "conv9": {
+      "macs_per_sample": 622080.0,
+      "binary": false,
+      "input_kind": "multibit",
+      "rate": 0.4757197319566195,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 2.861568e-06
+    },
+    "conv10": {
+      "macs_per_sample": 4423680.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.11082453227647776,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 4.4122704024672825e-07
+    },
+    "conv11": {
+      "macs_per_sample": 477757440.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.06601983508310773,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 2.838732065867496e-05
+    },
+    "fc1": {
+      "macs_per_sample": 1244160.0,
+      "binary": false,
+      "input_kind": "multibit",
+      "rate": 0.27637095554166846,
+      "component": "classifier",
+      "t_replicated": false,
+      "energy_J": 5.723136e-06
+    }
+  },
+  "components": {
+    "stem": {
+      "SOPs_M": 0.0,
+      "MACs_M": 1.94688,
+      "energy_uJ": 8.955647999999998
+    },
+    "conv": {
+      "SOPs_M": 217.3515791310104,
+      "MACs_M": 80.24832,
+      "energy_uJ": 564.7586932179092
+    },
+    "classifier": {
+      "SOPs_M": 0.0,
+      "MACs_M": 1.24416,
+      "energy_uJ": 5.723135999999999
+    },
+    "other": {
+      "SOPs_M": 0.0,
+      "MACs_M": 0.0,
+      "energy_uJ": 0.0
+    }
+  }
+}

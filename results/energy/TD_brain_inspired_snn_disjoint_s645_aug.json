@@ -1,0 +1,180 @@
+{
+  "tag": "TD_brain_inspired_snn_disjoint_s645_aug",
+  "model": "brain_inspired_snn",
+  "dataset": "TD",
+  "attn_variant": null,
+  "arch_variant": "official_external_adapter",
+  "split": "disjoint",
+  "seed": 645,
+  "window_size": 13,
+  "n_components": 20,
+  "timesteps": 30,
+  "split_hash": "8cfd12c4d44469d1",
+  "protocol_hash": "13294650296faf1a",
+  "source_result": "results/baselines/TD_brain_inspired_snn_disjoint_s645_aug.json",
+  "checkpoint": "results/baselines/ckpt/TD_brain_inspired_snn_disjoint_s645_aug.pt",
+  "ANN_GFLOPs": 1.57257696,
+  "adapter_notes": [],
+  "energy_accounting_version": 2,
+  "E_primary_uJ": 597.603232660078,
+  "E_optimistic_lower_uJ": 288.8776006600782,
+  "binary_ac_uJ": 213.78217666007814,
+  "multibit_mac_uJ": 383.821056,
+  "static_input_mac_uJ": 0.0,
+  "classifier_uJ": 5.723135999999999,
+  "classifier_input_kinds": {
+    "fc1": "multibit"
+  },
+  "E_SNN_uJ": 597.603232660078,
+  "E_ANN_uJ": 7233.854015999999,
+  "energy_ratio": 0.08261201170749172,
+  "SOPs_M": 237.5357518445313,
+  "MAC_ops_M": 83.43936,
+  "mean_firing_rate": 0.21833151173508283,
+  "firing_rate_source": "binary_layer_inputs",
+  "spike_rates": {},
+  "binary_input_rates": {
+    "conv2": 0.3337710272695445,
+    "conv3": 0.21660444480366342,
+    "conv4": 0.35950473553479967,
+    "conv5": 0.2029553420947873,
+    "conv6": 0.1612036988262851,
+    "conv8": 0.27533297787019756,
+    "conv10": 0.13564181256828542,
+    "conv11": 0.06163805491309966
+  },
+  "n_profile_samples": 299266,
+  "lif_rates": {},
+  "per_layer": {
+    "conv1": {
+      "macs_per_sample": 1946880.0,
+      "binary": false,
+      "input_kind": "multibit",
+      "rate": 0.018308619589420542,
+      "component": "stem",
+      "t_replicated": false,
+      "energy_J": 8.955647999999999e-06
+    },
+    "conv2": {
+      "macs_per_sample": 93450240.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.3337710272695445,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 2.8071884343046932e-05
+    },
+    "conv3": {
+      "macs_per_sample": 186900480.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.21660444480366342,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 3.643512723354438e-05
+    },
+    "conv4": {
+      "macs_per_sample": 1460160.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.35950473553479967,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 4.724409911746438e-07
+    },
+    "conv5": {
+      "macs_per_sample": 5191680.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.2029553420947873,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 9.483112714019988e-07
+    },
+    "conv6": {
+      "macs_per_sample": 560701440.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.1612036988262851,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 8.134843145870193e-05
+    },
+    "conv7": {
+      "macs_per_sample": 79626240.0,
+      "binary": false,
+      "input_kind": "multibit",
+      "rate": 0.1624713440872575,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 0.000366280704
+    },
+    "conv8": {
+      "macs_per_sample": 159252480.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.27533297787019756,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 3.946271359645267e-05
+    },
+    "conv9": {
+      "macs_per_sample": 622080.0,
+      "binary": false,
+      "input_kind": "multibit",
+      "rate": 0.4916883793677957,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 2.861568e-06
+    },
+    "conv10": {
+      "macs_per_sample": 4423680.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.13564181256828542,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 5.400323760798655e-07
+    },
+    "conv11": {
+      "macs_per_sample": 477757440.0,
+      "binary": true,
+      "input_kind": "binary",
+      "rate": 0.06163805491309966,
+      "component": "conv",
+      "t_replicated": false,
+      "energy_J": 2.6503235389675728e-05
+    },
+    "fc1": {
+      "macs_per_sample": 1244160.0,
+      "binary": false,
+      "input_kind": "multibit",
+      "rate": 0.3079515604916267,
+      "component": "classifier",
+      "t_replicated": false,
+      "energy_J": 5.723136e-06
+    }
+  },
+  "components": {
+    "stem": {
+      "SOPs_M": 0.0,
+      "MACs_M": 1.94688,
+      "energy_uJ": 8.955647999999998
+    },
+    "conv": {
+      "SOPs_M": 237.5357518445313,
+      "MACs_M": 80.24832,
+      "energy_uJ": 582.924448660078
+    },
+    "classifier": {
+      "SOPs_M": 0.0,
+      "MACs_M": 1.24416,
+      "energy_uJ": 5.723135999999999
+    },
+    "other": {
+      "SOPs_M": 0.0,
+      "MACs_M": 0.0,
+      "energy_uJ": 0.0
+    }
+  }
+}

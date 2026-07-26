@@ -1,0 +1,183 @@
+{
+  "tag": "TD_brain_inspired_snn_disjoint_s645_aug",
+  "model": "brain_inspired_snn",
+  "external_baseline": true,
+  "dataset": "TD",
+  "split": "disjoint",
+  "seed": 645,
+  "attn_variant": null,
+  "OA": 91.45709836733874,
+  "AA": 82.64430007392052,
+  "Kappa": 90.1747273178114,
+  "Macro_F1": 81.01255153186187,
+  "per_class": [
+    99.94414967886065,
+    91.3618576372045,
+    90.09693328042628,
+    96.72691005802709,
+    97.88053949903662,
+    85.13958078766801,
+    45.52150466920952,
+    99.24785671032922,
+    92.94419499679282,
+    95.25032092426187,
+    70.52879757494107,
+    0.0,
+    100.0,
+    93.30143540669856,
+    57.204221894943544,
+    95.33875062188261,
+    77.23360655737706,
+    99.87674103291015
+  ],
+  "params": 888416,
+  "ANN_GFLOPs": 1.57257696,
+  "train_time": 3460.117516040802,
+  "test_time": 47.65982174873352,
+  "n_train": 27868,
+  "n_val": 27870,
+  "n_test": 299266,
+  "timesteps": 30,
+  "window_size": 13,
+  "n_components": 20,
+  "train_ratio": 0.05,
+  "use_sta": null,
+  "use_sce": null,
+  "augment": true,
+  "arch_variant": "official_external_adapter",
+  "arch_config": {
+    "external_baseline": "brain_inspired_snn",
+    "display_name": "Brain-inspired SNN",
+    "source_repo": "https://github.com/Katherine-Cao/HSI_SNN",
+    "source_commit": "b9b49325e33caf1ed2c760df6d51b74cf6e38a2a",
+    "source_module": "models/TGRS.py",
+    "adapter": "official_model_class",
+    "adapter_notes": [],
+    "timesteps": 30,
+    "leak_mem": 0.7,
+    "window_size": 13,
+    "n_components": 20,
+    "epochs": 100,
+    "optimizer_recipe": "snn_hsi_shared_adamw"
+  },
+  "arch_config_hash": "69f67530d8e4e6f0",
+  "E_SNN_uJ": 597.6018697293498,
+  "E_ANN_uJ": 7233.854015999999,
+  "energy_ratio": 0.0826118232974512,
+  "SOPs_M": 237.5342374770554,
+  "MAC_ops_M": 83.43936,
+  "mean_firing_rate": 0.0,
+  "n_profile_samples": 299266,
+  "lif_rates": {},
+  "per_layer": {
+    "conv1": {
+      "macs_per_sample": 1946880.0,
+      "binary": false,
+      "rate": 0.01815319079459241,
+      "component": "other",
+      "energy_J": 8.955647999999999e-06
+    },
+    "conv2": {
+      "macs_per_sample": 93450240.0,
+      "binary": true,
+      "rate": 0.3337795365731261,
+      "component": "other",
+      "energy_J": 2.8072600019862668e-05
+    },
+    "conv3": {
+      "macs_per_sample": 186900480.0,
+      "binary": true,
+      "rate": 0.21660443586607775,
+      "component": "other",
+      "energy_J": 3.643512573014923e-05
+    },
+    "conv4": {
+      "macs_per_sample": 1460160.0,
+      "binary": true,
+      "rate": 0.35950455762594513,
+      "component": "other",
+      "energy_J": 4.7244075737679007e-07
+    },
+    "conv5": {
+      "macs_per_sample": 5191680.0,
+      "binary": true,
+      "rate": 0.20294925091230973,
+      "component": "other",
+      "energy_J": 9.482828102787781e-07
+    },
+    "conv6": {
+      "macs_per_sample": 560701440.0,
+      "binary": true,
+      "rate": 0.16120534902305855,
+      "component": "other",
+      "energy_J": 8.134926419963837e-05
+    },
+    "conv7": {
+      "macs_per_sample": 79626240.0,
+      "binary": false,
+      "rate": 0.16247491067949354,
+      "component": "other",
+      "energy_J": 0.000366280704
+    },
+    "conv8": {
+      "macs_per_sample": 159252480.0,
+      "binary": true,
+      "rate": 0.2753263337650148,
+      "component": "other",
+      "energy_J": 3.946176131524771e-05
+    },
+    "conv9": {
+      "macs_per_sample": 622080.0,
+      "binary": false,
+      "rate": 0.4916750145646242,
+      "component": "other",
+      "energy_J": 2.861568e-06
+    },
+    "conv10": {
+      "macs_per_sample": 4423680.0,
+      "binary": true,
+      "rate": 0.13563621385367933,
+      "component": "other",
+      "energy_J": 5.400100858502198e-07
+    },
+    "conv11": {
+      "macs_per_sample": 477757440.0,
+      "binary": true,
+      "rate": 0.06163362082032927,
+      "component": "other",
+      "energy_J": 2.650132881094609e-05
+    },
+    "fc1": {
+      "macs_per_sample": 1244160.0,
+      "binary": false,
+      "rate": 0.3079283589752991,
+      "component": "other",
+      "energy_J": 5.723136e-06
+    }
+  },
+  "components": {
+    "other": {
+      "SOPs_M": 237.5342374770554,
+      "MACs_M": 83.43936,
+      "energy_uJ": 597.6018697293498
+    }
+  },
+  "split_hash": "8cfd12c4d44469d1",
+  "split_manifest": {
+    "dataset": "TD",
+    "split": "disjoint",
+    "seed": 645,
+    "window_size": 13,
+    "train_ratio": 0.05,
+    "val_ratio": 0.05,
+    "block": 16,
+    "n_train": 27868,
+    "n_val": 27870,
+    "n_test": 299266,
+    "num_classes": 18,
+    "sha256_16": "8cfd12c4d44469d1",
+    "file": "TD_disjoint_s645_w13.npz",
+    "manifest_path": "results/splits/manifest.json"
+  },
+  "checkpoint": "ckpt/TD_brain_inspired_snn_disjoint_s645_aug.pt"
+}

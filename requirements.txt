@@ -1,0 +1,11 @@
+# Install torch first with CUDA 12.8 wheels (RTX Pro 6000 / sm_120):
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+torch>=2.7
+spikingjelly
+scipy
+scikit-learn
+pandas
+matplotlib
+seaborn
+thop
+torchinfo

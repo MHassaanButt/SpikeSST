@@ -1,0 +1,260 @@
+{
+  "tag": "HC_frm_snn_disjoint_s445_aug",
+  "model": "frm_snn",
+  "external_baseline": true,
+  "dataset": "HC",
+  "split": "disjoint",
+  "seed": 445,
+  "attn_variant": null,
+  "OA": 89.51850768221033,
+  "AA": 78.34987796349432,
+  "Kappa": 87.57305173584115,
+  "Macro_F1": 78.86712596514688,
+  "per_class": [
+    96.37822070977151,
+    89.24211820497058,
+    86.43878462913315,
+    95.74468085106383,
+    100.0,
+    43.31524420325604,
+    63.771428571428565,
+    69.63314431200092,
+    72.99435028248588,
+    94.35117519257358,
+    87.9891119428377,
+    52.370689655172406,
+    66.36601687518184,
+    95.58536585365853,
+    41.17647058823529,
+    98.24124554413923
+  ],
+  "params": 1139200,
+  "ANN_GFLOPs": 1.87742336,
+  "train_time": 3733.624231815338,
+  "test_time": 43.629703521728516,
+  "n_train": 12878,
+  "n_val": 12876,
+  "n_test": 126461,
+  "timesteps": 40,
+  "window_size": 13,
+  "n_components": 20,
+  "train_ratio": 0.05,
+  "use_sta": null,
+  "use_sce": null,
+  "augment": true,
+  "arch_variant": "official_external_adapter",
+  "arch_config": {
+    "external_baseline": "frm_snn",
+    "display_name": "FRM-SNN",
+    "source_repo": "https://github.com/Li-SNN/FRM-SNN",
+    "source_commit": "6eccd679ca2e5efd7615b96e8a648ddd9c16884b",
+    "source_module": "SNN_SWRB.py",
+    "adapter": "official_model_file_with_classifier_head_check",
+    "adapter_notes": [
+      "replaced classifier head in_features 4096 -> 2304 for window_size=13"
+    ],
+    "timesteps": 40,
+    "leak_mem": 0.7,
+    "window_size": 13,
+    "n_components": 20,
+    "epochs": 100,
+    "optimizer_recipe": "snn_hsi_shared_adamw"
+  },
+  "arch_config_hash": "03491cb6b3770ff5",
+  "E_SNN_uJ": 3172.7956169107674,
+  "E_ANN_uJ": 8636.147456,
+  "energy_ratio": 0.36738553076770986,
+  "SOPs_M": 210.1424010119645,
+  "MAC_ops_M": 648.62336,
+  "mean_firing_rate": 0.0,
+  "n_profile_samples": 126461,
+  "lif_rates": {},
+  "per_layer": {
+    "conv1": {
+      "macs_per_sample": 1946880.0,
+      "binary": false,
+      "rate": -0.0009697553529992072,
+      "component": "other",
+      "energy_J": 8.955647999999999e-06
+    },
+    "conv1_1.m.0": {
+      "macs_per_sample": 13844480.0,
+      "binary": true,
+      "rate": 0.2690353103858694,
+      "component": "other",
+      "energy_J": 3.3521885765378654e-06
+    },
+    "conv1_1.m.1": {
+      "macs_per_sample": 124600320.0,
+      "binary": true,
+      "rate": 0.2690353103858694,
+      "component": "other",
+      "energy_J": 3.016969718884079e-05
+    },
+    "conv1_2": {
+      "macs_per_sample": 27688960.0,
+      "binary": true,
+      "rate": 0.06667375714398503,
+      "component": "other",
+      "energy_J": 1.6615142951485643e-06
+    },
+    "conv1_3.m.0": {
+      "macs_per_sample": 13844480.0,
+      "binary": true,
+      "rate": 0.2690353103858694,
+      "component": "other",
+      "energy_J": 3.3521885765378654e-06
+    },
+    "conv1_3.m.1": {
+      "macs_per_sample": 124600320.0,
+      "binary": true,
+      "rate": 0.2690353103858694,
+      "component": "other",
+      "energy_J": 3.016969718884079e-05
+    },
+    "conv1_4": {
+      "macs_per_sample": 27688960.0,
+      "binary": true,
+      "rate": 0.05744208388942101,
+      "component": "other",
+      "energy_J": 1.4314604068177406e-06
+    },
+    "conv2": {
+      "macs_per_sample": 55377920.0,
+      "binary": false,
+      "rate": 0.37091762045047694,
+      "component": "other",
+      "energy_J": 0.00025473843199999997
+    },
+    "conv3_1.m.0": {
+      "macs_per_sample": 11796480.0,
+      "binary": false,
+      "rate": 0.16633042887007338,
+      "component": "other",
+      "energy_J": 5.4263807999999996e-05
+    },
+    "conv3_1.m.1": {
+      "macs_per_sample": 106168320.0,
+      "binary": false,
+      "rate": 0.16633042887007338,
+      "component": "other",
+      "energy_J": 0.000488374272
+    },
+    "conv3_2": {
+      "macs_per_sample": 23592960.0,
+      "binary": true,
+      "rate": 0.0681519288572988,
+      "component": "other",
+      "energy_J": 1.4471151583077866e-06
+    },
+    "conv3_3.m.0": {
+      "macs_per_sample": 106168320.0,
+      "binary": false,
+      "rate": 0.16633042887007338,
+      "component": "other",
+      "energy_J": 0.000488374272
+    },
+    "conv3_3.m.1": {
+      "macs_per_sample": 294912000.0,
+      "binary": false,
+      "rate": 0.16633042887007338,
+      "component": "other",
+      "energy_J": 0.0013565952
+    },
+    "conv3_4": {
+      "macs_per_sample": 23592960.0,
+      "binary": true,
+      "rate": 0.08904911011839446,
+      "component": "other",
+      "energy_J": 1.8908388837529882e-06
+    },
+    "conv4": {
+      "macs_per_sample": 23592960.0,
+      "binary": false,
+      "rate": 0.3594350621577914,
+      "component": "other",
+      "energy_J": 0.00010852761599999999
+    },
+    "conv5_1.m.0": {
+      "macs_per_sample": 106168320.0,
+      "binary": true,
+      "rate": 0.1545376820575492,
+      "component": "other",
+      "energy_J": 1.4766305472669728e-05
+    },
+    "conv5_1.m.1": {
+      "macs_per_sample": 294912000.0,
+      "binary": true,
+      "rate": 0.1545376820575492,
+      "component": "other",
+      "energy_J": 4.101751520186035e-05
+    },
+    "conv5_2": {
+      "macs_per_sample": 23592960.0,
+      "binary": true,
+      "rate": 0.09318023566650983,
+      "component": "other",
+      "energy_J": 1.978557815583486e-06
+    },
+    "conv5_3.m.0": {
+      "macs_per_sample": 106168320.0,
+      "binary": true,
+      "rate": 0.1545376820575492,
+      "component": "other",
+      "energy_J": 1.4766305472669728e-05
+    },
+    "conv5_3.m.1": {
+      "macs_per_sample": 294912000.0,
+      "binary": true,
+      "rate": 0.1545376820575492,
+      "component": "other",
+      "energy_J": 4.101751520186035e-05
+    },
+    "conv5_4": {
+      "macs_per_sample": 23592960.0,
+      "binary": true,
+      "rate": 0.09924153793429143,
+      "component": "other",
+      "energy_J": 2.107261471339998e-06
+    },
+    "conv6": {
+      "macs_per_sample": 47185920.0,
+      "binary": false,
+      "rate": 0.6348828906259831,
+      "component": "other",
+      "energy_J": 0.00021705523199999998
+    },
+    "fc1": {
+      "macs_per_sample": 1474560.0,
+      "binary": false,
+      "rate": 0.0466790524826499,
+      "component": "other",
+      "energy_J": 6.7829759999999994e-06
+    }
+  },
+  "components": {
+    "other": {
+      "SOPs_M": 210.1424010119645,
+      "MACs_M": 648.62336,
+      "energy_uJ": 3172.7956169107674
+    }
+  },
+  "split_hash": "809293a41fc2458d",
+  "split_manifest": {
+    "dataset": "HC",
+    "split": "disjoint",
+    "seed": 445,
+    "window_size": 13,
+    "train_ratio": 0.05,
+    "val_ratio": 0.05,
+    "block": 16,
+    "n_train": 12878,
+    "n_val": 12876,
+    "n_test": 126461,
+    "num_classes": 16,
+    "sha256_16": "809293a41fc2458d",
+    "file": "HC_disjoint_s445_w13.npz",
+    "manifest_path": "results/splits/manifest.json"
+  },
+  "checkpoint": "ckpt/HC_frm_snn_disjoint_s445_aug.pt"
+}
