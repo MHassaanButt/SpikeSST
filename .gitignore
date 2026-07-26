@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+doc/
+
+tools/
+slurm_logs/
+
+
+/baselines/
+
+*.pt
+
+*.mat

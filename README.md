@@ -1,47 +1,85 @@
-# Energy-Efficient Spiking Transformer for HSI Classification
+# SpikeSST: An Energy-Efficient Spiking Neural Network for Hyperspectral Image Classification
 
-Rebuilt pipeline (v3). `main.py` is the old notebook-style code, kept only as
-reference — it contains fatal bugs (no temporal dynamics, input-destroying encoder,
-rank-1 attention, broken energy accounting) and should not be used.
+Official PyTorch implementation.
 
-## Layout
+## Citation
 
-```
-snn_hsi/
-  config.py        dataclass config + dataset registry (data at ../datasets)
-  data.py          PCA (train-pixel fit), random + spatially disjoint splits, lazy patches
-  models/
-    layers.py      multi-step LIF blocks (pre-spike design: weights consume binary spikes)
-    attention.py   variant A 'additive' (fixed co-activation) | variant B 'sdsa' (linear, O(N))
-    astst.py       proposed model
-    baselines.py   3D-CNN, SpectralFormer, SSFTT, SSMamba, Spikformer (multi-step)
-  engine.py        train/eval, metrics (OA/AA/Kappa/F1, zero-support-safe)
-  energy.py        SOP-based energy: E = E_MAC*analog + E_AC*sum(fr*FLOPs), 45nm constants
-  viz.py           confusion matrix, t-SNE, curves, full-scene maps
-scripts/
-  sanity_checks.py CPU checks that the v1 bugs stay fixed (run after any model change)
-  run_experiment.py  resumable CLI (per-combo JSON in results dir)
-  slurm_run.sh     sbatch wrapper (GPU partition)
-  run_all.sh       staged experiment suite
+```bibtex
+@article{butt2026spikesst,
+  title   = {SpikeSST: An Energy-Efficient Spiking Neural Network for
+             Hyperspectral Image Classification},
+  author  = {Butt, Muhammad Hassaan Farooq},
+  year    = {2026}
+}
 ```
 
-## Environment
+## Requirements
 
-`~/venvs/snn` (Python 3.9, torch 2.8+cu128 for the RTX Pro 6000 node, SpikingJelly).
+```bash
+pip install torch --index-url https://download.pytorch.org/whl/cu128   # match your CUDA
+pip install -r requirements.txt
+```
+
+## Data
+
+```bash
+export SNN_HSI_DATA=/path/to/hsi
+```
+
+The directory must contain:
+
+```
+PaviaU.mat             PaviaU_gt.mat
+WHU_Hi_HanChuan.mat    WHU_Hi_HanChuan_gt.mat
+QUH-Tangdaowan.mat     QUH-Tangdaowan_GT.mat
+```
 
 ## Usage
 
+Run step 1 first: it writes the split manifests that steps 2 and 3 are scored against.
+
 ```bash
-# sanity checks (login node, CPU)
-~/venvs/snn/bin/python scripts/sanity_checks.py
-
-# single experiment on the GPU node
-sbatch scripts/slurm_run.sh --models ASTST --attn-variant sdsa \
-    --datasets IP PU --splits random disjoint --seeds 345 445 545 --plots
-
-# everything
-bash scripts/run_all.sh
+SEEDS="345 445 545 645 745"
+PROTOCOL="--splits disjoint --augment --patience 50 --window-size 13 --n-components 20"
 ```
 
-Finished (model, dataset, split, seed) combos are skipped on re-run via their JSON
-files, so jobs are safe to resubmit.
+```bash
+# 1. official baselines (also writes results/splits/manifest.json)
+git clone https://github.com/Katherine-Cao/HSI_SNN baselines/HSI_SNN
+git clone https://github.com/Li-SNN/FRM-SNN        baselines/FRM-SNN
+
+for ds in PU HC TD; do
+  python train_baselines.py --baselines brain_inspired_snn frm_snn --datasets $ds \
+      --epochs 100 --seeds $SEEDS $PROTOCOL --out results/baselines
+done
+```
+
+```bash
+# 2. SpikeSST, on the same splits
+python train.py --models ASTST --datasets PU HC TD --seeds $SEEDS $PROTOCOL \
+    --skip-energy --split-manifest results/splits/manifest.json \
+    --no-write-split-manifest --out results/spikesst
+```
+
+```bash
+# 3. energy profiles (forward-only, no retraining)
+python profile_energy.py --src results/baselines --eval-batch-size 128
+python profile_energy.py --src results/spikesst  --eval-batch-size 128
+```
+
+## Results
+
+Overall accuracy (%), five seeds, spatially disjoint splits. Energy is estimated
+arithmetic cost per patch at 45 nm, quoted on Tangdaowan.
+
+| Method | Params | Energy | Pavia University | WHU-Hi-HanChuan | QUH-Tangdaowan |
+|:--|--:|--:|--:|--:|--:|
+| Brain-inspired SNN | 888 K | 599.4 µJ | 91.99 | 87.62 | 91.59 |
+| FRM-SNN | 1 144 K | 3401.5 µJ | **94.33** | 88.65 | 91.99 |
+| SpikeSST | **111 K** | **14.0 µJ** | 91.41 | **88.99** | **92.58** |
+
+Per-class, AA and κ results are in the paper. All reported runs are in `results/`.
+
+## Contact
+
+Muhammad Hassaan Farooq Butt
